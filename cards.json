@@ -1,0 +1,28 @@
+{ "questions": [{
+    "id": 0,
+    "cardcontent": "question bla bla bla",
+    "cardshown": false,
+  }, {
+    "id": 1,
+    "cardcontent": "question bla bla bla",
+    "cardshown": false,
+  }, {
+    "id": 2,
+    "cardcontent": "question bla bla bla",
+    "cardshown": false,
+  }],
+  "answers": [{
+    "cardcontent": "answer bla bla bla",
+    "player": "USA"
+  }, {
+    "cardcontent": "answer bla bla bla",
+    "player": "USA"
+  }],
+  "players": [{
+  "username": "player1",
+  "userage": "21"
+}, {
+  "username": "player2",
+  "userage": "22"
+  }]
+}
