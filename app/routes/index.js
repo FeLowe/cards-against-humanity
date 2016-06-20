@@ -21,22 +21,13 @@ export default Ember.Route.extend({
       this.transitionTo('index');
       $('#submitPlayers').hide();
       $('#destroyPlayers').show();
-
-        var playerArray = [player1, player2, player3, player4];
-        var cards = [this.get('model.answers')];
-        console.log(cards);
-        playerArray.forEach(function(){
-
-        });
-
     },
     deletePlayers(players) {
-      players.forEach(function(players){
-        players.destroyRecord();
+      players.players.forEach(function(player){
+        player.destroyRecord();
       });
       $('#destroyPlayers').hide();
       $('#submitPlayers').show();
     },
-
   },
 });
