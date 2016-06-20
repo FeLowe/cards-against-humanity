@@ -15,7 +15,13 @@ export default Ember.Route.extend({
       player3.save();
       player4.save();
       this.transitionTo('index');
-      $('#submitPlayers').hide();
+      // $('#submitPlayers').hide();
+      // $('#destroyPlayers').show();
     },
+    // deletePlayers('players') {
+    //   player.forEeach(function(player){
+    //     player.destroyRecord();
+    //   });
+    // },
   },
 });
