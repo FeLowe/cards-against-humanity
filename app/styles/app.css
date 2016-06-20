@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 .questionTile {
   display:inline-block;
   font-size: 30px;
@@ -29,7 +29,7 @@
   float:left;
   box-shadow:1px 1px 1px #ccc;
   border-radius:5px;
-=======
+
 /*NAV BAR EVERYTHING*/
 #nav-bar-links{
   float: right;
@@ -84,6 +84,4 @@ footer {
   font-size:15px;
   color:#9d9d9d;
   margin-top: 5px;
-
->>>>>>> a7c363507ce85a00427db69da7b79dbf68bcb176
 }
