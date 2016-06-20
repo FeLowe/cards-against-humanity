@@ -1,5 +1,12 @@
 <div class="container">
   <div class="row">
+    {{#each model as |player|}}
+      <div class="col-sm-3 playerTitle">
+        {{#link-to 'player' player.id}}{{player.username}}{{/link-to}}
+      </div>
+    {{/each}}
+  </div>
+  <div class="row">
     <div class="col-sm-12">
       {{submit-players player=model submitPlayers="submitPlayers"}}
       {{delete-players player=model deletePlayers="deletePlayers"}}

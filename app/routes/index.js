@@ -2,7 +2,11 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   model() {
-    return this.store.findAll('player');
+    return Ember.RSVP.hash({
+      questions: this.store.findAll('question'),
+      answers: this.store.findAll('answer'),
+      players: this.store.findAll('player'),
+    });
   },
   actions: {
     submitPlayers(params1, params2, params3, params4) {
@@ -17,6 +21,14 @@ export default Ember.Route.extend({
       this.transitionTo('index');
       $('#submitPlayers').hide();
       $('#destroyPlayers').show();
+
+        var playerArray = [player1, player2, player3, player4];
+        var cards = [this.get('model.answers')];
+        console.log(cards);
+        playerArray.forEach(function(){
+
+        });
+
     },
     deletePlayers(players) {
       players.forEach(function(players){
@@ -25,5 +37,6 @@ export default Ember.Route.extend({
       $('#destroyPlayers').hide();
       $('#submitPlayers').show();
     },
+
   },
 });
