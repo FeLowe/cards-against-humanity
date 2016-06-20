@@ -1,3 +1,60 @@
-<h2 id="title">Welcome to Ember</h2>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title></title>
+</head>
+<!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      {{#link-to 'index'}}<div class="navbar-brand"id="logoName"> LOGO</div>
+
+      {{/link-to}}
+    </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav" id="nav-bar-links">
+        <li id="nav-name">
+          {{#link-to 'rules'}}rules{{/link-to}}
+        </li>
+        <li>
+          {{#link-to 'index'}}home{{/link-to}}
+        </li>
+      </ul>
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container -->
+</nav>
 
 {{outlet}}
+
+<footer>
+  <nav class="navbar navbar-inverse navbar-fixed-bottom">
+  <div class="container">
+    <div class="text-center center-block">
+    <!-- <p>Check us out on social media</p> -->
+      <a href="https://www.facebook.com"><i id="social-fb" class="fa fa-facebook-square fa-3x social"></i></a>
+      <a href="https://twitter.com"><i id="social-tw" class="fa fa-twitter-square fa-3x social"></i></a>
+      <a href="https://plus.google.com"><i id="social-gp" class="fa fa-google-plus-square fa-3x social"></i></a>
+      <a href=""><i id="social-em" class="fa fa-envelope-square fa-3x social"></i></a>
+    </div>
+  </div>
+  <div class="footer-copyright">
+    <div class="footer-copyright-text clearfix">
+      <span id="copyright" class="copyright-text pull-left">&nbsp; &copy; Fernanda Lowe, John Dow, Kevin Deganos &amp; Cards Against Humanity.</span>
+    </div>
+  </div>
+</nav>
+</footer>
