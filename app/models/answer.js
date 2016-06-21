@@ -3,6 +3,7 @@ import DS from 'ember-data';
 // import { belongsTo, hasMany } from 'ember-data/relationships';
 
 export default DS.Model.extend({
-cardcontent: DS.attr(),
-player: DS.belongsTo('player', {async: true})
+  cardcontent: DS.attr(),
+  drawn: DS.attr(false),
+  player: DS.belongsTo('player', {async: true})
 });

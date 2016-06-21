@@ -1,9 +1,15 @@
-
 <div class="container">
-  <div id="index">
-
-    {{answer-tile answers=model.answers}}
-    {{question-tile questions=model.questions}}
+  <div class="row">
+    {{#each model.players as |player|}}
+      <div class="col-sm-3 playerTitle">
+        {{#link-to 'player' player.id}}{{player.username}}{{/link-to}}
+      </div>
+    {{/each}}
   </div>
-
+  <div class="row">
+    <div class="col-sm-12">
+      {{submit-players submitPlayers="submitPlayers" answers=model.answers questions=model.questions}}
+      {{delete-players players=model.players answers=model.answers questions=model.questions deletePlayers="deletePlayers"}}
+    </div>
+  </div>
 </div>
