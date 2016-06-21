@@ -27,8 +27,8 @@ export default Ember.Route.extend({
             answerHand.push(allAnswers[rand]);
           } else {
             rand = Math.floor(Math.random() * allAnswers.length);
-          }
-        }
+          };
+        };
 
         console.log(answerHand);
         return answerHand;
@@ -45,6 +45,7 @@ export default Ember.Route.extend({
       this.transitionTo('index');
       $('#submitPlayers').hide();
       $('#destroyPlayers').show();
+
     },
     deletePlayers(players) {
       players.forEach(function(player){
