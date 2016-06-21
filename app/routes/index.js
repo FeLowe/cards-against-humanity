@@ -22,19 +22,20 @@ export default Ember.Route.extend({
             answerHand.push(allAnswers[rand]);
           } else {
             rand = Math.floor(Math.random() * allAnswers.length);
-          };
-        };
-        console.log(answerHand);
+          }
+        }
+        console.log("hello");
         return answerHand;
       };
       var player1 = this.store.createRecord('player', params1);
       var player2 = this.store.createRecord('player', params2);
       var player3 = this.store.createRecord('player', params3);
       var player4 = this.store.createRecord('player', params4);
-      player1.save();
-      player2.save();
-      player3.save();
-      player4.save();
+      var playerArray = [player1, player2, player3, player4];
+      playerArray.forEach(function(player) {
+        player.get('answers').addObjects(answersDealt());
+        player.save();
+      });
       this.transitionTo('index');
       $('#submitPlayers').hide();
       $('#destroyPlayers').show();
