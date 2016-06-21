@@ -1,57 +1,12 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  answersDealt: Ember.computed(function() {
-    var allAnswers = [];
-    var answerHand = [];
+  isShowingForm: false,
+    actions: {
 
-    this.get('answers').forEach(function(answer) {
-      allAnswers.push(answer);
-    });
-
-    // for (var i=0; i < 10; i++) {
-    //   var rand = Math.floor(Math.random() * allAnswers.length);
-    //   // while (allAnswers[rand].drawn) {
-    //   //   rand = Math.floor(Math.random() * allAnswers.length);
-    //   // }
-    //   if (allAnswers[rand].get('drawn') === false) {
-    //     allAnswers[rand].set('drawn', true);
-    //     answerHand.push(allAnswers[rand]);
-    //   } else {
-    //     // --i;
-    //     rand = Math.floor(Math.random() * allAnswers.length);
-    //   }
-    // }
-    // while (answerHand.length < 10) {
-    //   var rand = Math.floor(Math.random() * allAnswers.length);
-    //
-    //   if (allAnswers[rand].get('drawn') === false) {
-    //     allAnswers[rand].set('drawn', true);
-    //     answerHand.push(allAnswers[rand]);
-    //   } else {
-    //     // --i;
-    //     rand = Math.floor(Math.random() * allAnswers.length);
-    //   }
-    // }
-
-    var i = 0;
-    while (i < 10) {
-      var rand = Math.floor(Math.random() * allAnswers.length);
-      if (allAnswers[rand].get('drawn') === "false") {
-        allAnswers[rand].set('drawn', "true");
-        console.log(allAnswers[rand].get('drawn'));
-        answerHand.push(allAnswers[rand]);
-        i++;
-      } else {
-        rand = Math.floor(Math.random() * allAnswers.length);
-      }
-    }
-
-    console.log(answerHand);
-    return answerHand;
-  }),
-  actions: {
-    
+    showForm() {
+      this.set('isShowingForm', true);
+    },
     submitPlayers() {
       var params1 = {
         username: "this.get('username1')",
@@ -73,6 +28,7 @@ export default Ember.Component.extend({
         userage: "this.get('userage4')",
         userpoints: 0,
       };
+      this.set('isShowingForm', false),
       this.sendAction('submitPlayers', params1, params2, params3, params4);
       this.set('username1', '');
       this.set('userage1', '');
@@ -86,3 +42,53 @@ export default Ember.Component.extend({
     },
   }
 });
+
+// answersDealt: Ember.computed(function() {
+//   var allAnswers = [];
+//   var answerHand = [];
+//
+//   this.get('answers').forEach(function(answer) {
+//     allAnswers.push(answer);
+//   });
+//
+  // for (var i=0; i < 10; i++) {
+  //   var rand = Math.floor(Math.random() * allAnswers.length);
+  //   // while (allAnswers[rand].drawn) {
+  //   //   rand = Math.floor(Math.random() * allAnswers.length);
+  //   // }
+  //   if (allAnswers[rand].get('drawn') === false) {
+  //     allAnswers[rand].set('drawn', true);
+  //     answerHand.push(allAnswers[rand]);
+  //   } else {
+  //     // --i;
+  //     rand = Math.floor(Math.random() * allAnswers.length);
+  //   }
+  // }
+  // while (answerHand.length < 10) {
+  //   var rand = Math.floor(Math.random() * allAnswers.length);
+  //
+  //   if (allAnswers[rand].get('drawn') === false) {
+  //     allAnswers[rand].set('drawn', true);
+  //     answerHand.push(allAnswers[rand]);
+  //   } else {
+  //     // --i;
+  //     rand = Math.floor(Math.random() * allAnswers.length);
+  //   }
+  // }
+
+//   var i = 0;
+//   while (i < 10) {
+//     var rand = Math.floor(Math.random() * allAnswers.length);
+//     if (allAnswers[rand].get('drawn') === "false") {
+//       allAnswers[rand].set('drawn', "true");
+//       console.log(allAnswers[rand].get('drawn'));
+//       answerHand.push(allAnswers[rand]);
+//       i++;
+//     } else {
+//       rand = Math.floor(Math.random() * allAnswers.length);
+//     }
+//   }
+//
+//   console.log(answerHand);
+//   return answerHand;
+// }),
