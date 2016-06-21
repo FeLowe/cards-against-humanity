@@ -51,6 +51,7 @@ export default Ember.Component.extend({
     return answerHand;
   }),
   actions: {
+    
     submitPlayers() {
       var params1 = {
         username: "this.get('username1')",

@@ -1,3 +1,5 @@
+{{#if isShowingForm}}
+
 <form id='submitPlayers' class="newGame form-group" {{action 'submitPlayers' on="submit"}}>
 
   <label for="username1" class="">Name: </label>
@@ -24,6 +26,8 @@
   <label for="userage4" class="">Age: </label>
   {{input type='number' value=userage4 class="form-control"}}
 
-  <br>
-  <button class="btn btn-primary btn-block" type="submit">Submit</button>
+  <button {{action 'submitPlayers'}}>Save</button>
 </form>
+{{else}}
+  <button {{action "showForm"}}class="btn btn-primary btn-block" type="submit">Add Player</button>
+{{/if}}
