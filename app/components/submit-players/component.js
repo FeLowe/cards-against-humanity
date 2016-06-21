@@ -7,8 +7,6 @@ export default Ember.Component.extend({
     showForm() {
       this.set('isShowingForm', true);
     },
-    
-  actions: {
     submitPlayers() {
       var params1 = {
         username: this.get('username1'),
@@ -42,5 +40,5 @@ export default Ember.Component.extend({
       this.set('username4', '');
       this.set('userage4', '');
     },
-  }
+  },
 });
