@@ -5,4 +5,5 @@ import DS from 'ember-data';
 export default DS.Model.extend({
 cardcontent: DS.attr(),
 cardshown: DS.attr(false),
+current: DS.attr(false)
 });
