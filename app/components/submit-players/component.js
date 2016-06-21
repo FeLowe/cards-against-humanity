@@ -9,8 +9,8 @@ export default Ember.Component.extend({
     },
     submitPlayers() {
       var params1 = {
-        username: "this.get('username1')",
-        userage: "this.get('userage1')",
+        username: this.get('username1'),
+        userage: this.get('userage1'),
         userpoints: 0,
       };
       var params2 = {
@@ -38,7 +38,6 @@ export default Ember.Component.extend({
       this.set('userage3', '');
       this.set('username4', '');
       this.set('userage4', '');
-      console.log(this.get('answersDealt'));
     },
   }
 });
