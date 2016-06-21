@@ -11,29 +11,22 @@ export default Ember.Route.extend({
   actions: {
     submitPlayers(params1, params2, params3, params4, answers) {
       var answersDealt = function() {
-        var allAnswers = [];
+        var allAnswers = answers.toArray();
         var answerHand = [];
-
-        answers.forEach(function(answer) {
-          allAnswers.push(answer);
-        });
 
         while (answerHand.length < 10) {
           var rand = Math.floor(Math.random() * allAnswers.length);
           if (allAnswers[rand].get('drawn') === "false") {
             allAnswers[rand].set('drawn', "true");
             allAnswers[rand].save();
-            console.log(allAnswers[rand].get('drawn'));
             answerHand.push(allAnswers[rand]);
           } else {
             rand = Math.floor(Math.random() * allAnswers.length);
           };
         };
-
         console.log(answerHand);
         return answerHand;
       };
-      console.log(answersDealt());
       var player1 = this.store.createRecord('player', params1);
       var player2 = this.store.createRecord('player', params2);
       var player3 = this.store.createRecord('player', params3);
