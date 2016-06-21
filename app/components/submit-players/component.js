@@ -45,7 +45,7 @@ export default Ember.Component.extend({
         userage: "this.get('userage4')",
         userpoints: 0,
       };
-      this.sendAction('submitPlayers', params1, params2, params3, params4, this.get('answers'));
+      this.sendAction('submitPlayers', params1, params2, params3, params4, this.get('answers'), this.get('questions'));
       this.set('username1', '');
       this.set('userage1', '');
       this.set('username2', '');

@@ -9,7 +9,7 @@ export default Ember.Route.extend({
     });
   },
   actions: {
-    submitPlayers(params1, params2, params3, params4, answers) {
+    submitPlayers(params1, params2, params3, params4, answers, questions) {
       var answersDealt = function() {
         var allAnswers = answers.toArray();
         var answerHand = [];
@@ -24,7 +24,6 @@ export default Ember.Route.extend({
             rand = Math.floor(Math.random() * allAnswers.length);
           }
         }
-        console.log("hello");
         return answerHand;
       };
       var player1 = this.store.createRecord('player', params1);
@@ -36,6 +35,11 @@ export default Ember.Route.extend({
         player.get('answers').addObjects(answersDealt());
         player.save();
       });
+
+      var questionsArray = questions.toArray();
+      var currentQuestion = questionsArray[Math.floor(Math.random() * questionsArray.length)];
+      console.log(currentQuestion);
+
       this.transitionTo('index');
       $('#submitPlayers').hide();
       $('#destroyPlayers').show();
