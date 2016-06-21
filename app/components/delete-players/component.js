@@ -11,7 +11,7 @@ export default Ember.Component.extend({
       });
       var questionArray = questions.toArray();
       questionArray.forEach(function(question) {
-        question.set('cardShown', "false");
+        question.set('cardshown', "false");
         question.save();
       });
       this.sendAction('deletePlayers', players);
