@@ -41,7 +41,6 @@ export default Ember.Route.extend({
       currentQuestion.set('cardshown', "true");
       currentQuestion.set('current', "true");
       currentQuestion.save();
-      console.log(currentQuestion);
 
       this.transitionTo('index');
     },

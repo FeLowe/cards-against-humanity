@@ -5,5 +5,7 @@ import DS from 'ember-data';
 export default DS.Model.extend({
   cardcontent: DS.attr(),
   drawn: DS.attr(false),
-  player: DS.belongsTo('player', {async: true})
+  selected: DS.attr(false),
+  player: DS.belongsTo('player', {async: true}),
+  votedBy: DS.hasMany('player', {async: true})
 });

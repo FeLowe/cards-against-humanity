@@ -6,5 +6,5 @@ export default DS.Model.extend({
   username: DS.attr(),
   userage: DS.attr(),
   userpoints: DS.attr(),
-  answers: DS.hasMany('answer', {async: true})
+  answers: DS.hasMany('answer', {inverse: null})
 });
