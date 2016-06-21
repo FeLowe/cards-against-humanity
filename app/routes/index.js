@@ -40,7 +40,6 @@ export default Ember.Route.extend({
       var currentQuestion = questionsArray[Math.floor(Math.random() * questionsArray.length)];
       currentQuestion.set('cardshown', "true");
       currentQuestion.save();
-      console.log(currentQuestion);
 
       this.transitionTo('index');
     },

@@ -5,8 +5,6 @@ export default Ember.Route.extend({
     return this.store.findRecord('player', params.player_id);
   },
   actions: {
-    drawTen(answers) {
 
-    },
-  },
+  }
 });
