@@ -1,9 +1,9 @@
 <p>{{model.username}}</p>
-<ul>
-{{#each answer as |cardcontent|}}
-  <div class="col-sm-3">
-    <li>{{answer.cardcontent}}</li>
-  </div>
+
+<!-- {{answer-tile answers=model.answers}} -->
+{{#each model.players.answers as |answer|}}
+<div class"answerTile">
+  <p>{{answer.cardcontent}}</p>
+</div>
 {{/each}}
-</ul>
 {{#link-to "index"}}home{{/link-to}}
