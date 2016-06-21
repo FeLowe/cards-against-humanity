@@ -1,1 +1,9 @@
-{{model.username}}
+<p>{{model.username}}</p>
+<ul>
+{{#each answer as |cardcontent|}}
+  <div class="col-sm-3">
+    <li>{{answer.cardcontent}}</li>
+  </div>
+{{/each}}
+</ul>
+{{#link-to "index"}}home{{/link-to}}
