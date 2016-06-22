@@ -1,16 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  // model(params) {
-  //   return this.store.findRecord('player', params.player_id);
-  // },
-  // model() {
-  //   return Ember.RSVP.hash({
-  //     questions: this.store.findAll('question'),
-  //     answers: this.store.findAll('answer'),
-  //     players: this.store.findAll('player'),
-  //   });
-  // },
+
   selectedAnswer: Ember.computed('answers.[]', function() {
     //  var listOfSelectedAnswers = [];
     //  this.get('answers').forEach(function(cardcontent) {
@@ -21,6 +12,27 @@ export default Ember.Component.extend({
     //  });
     //  console.log(listOfSelectedAnswers);
     //   return listOfSelectedAnswers;
-    return this.get('answers').findBy('selected', "true");
+    // console.log(this.get('answers'));
+    // console.log(this.get('answers').findBy('selected', true));
+    // var answerArray = this.get('answers').toArray();
+    // answerArray.forEach(function(answer) {
+    //   console.log(answer);
+    //   console.log(answer.get('selected'));
+    //   if (answer.selected === true) {
+    //     console.log(answer);
+    //     return answer;
+    //   }
+    // })
+    // console.log(answerArray);
+    // console.log(this.get('answers').filterBy('selected', "true"));
+    // return this.get('answers').findBy('selected', "true");
+
     }),
+  selectedStatus: 'No selection yet',
+  selectedStatusObserver: function() {
+    this.get('answers').then((answers) => {
+      console.log(answers.findBy('selected', true));
+      this.set('selectedStatus', answers.findBy('selected', true));
+    });
+  }.observes('selectedStatus.selected').on('init'),
 });
