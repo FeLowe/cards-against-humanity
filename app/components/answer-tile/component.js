@@ -3,10 +3,10 @@ import Ember from 'ember';
 export default Ember.Component.extend({
   actions: {
     selectCard(cardSelected) {
-      var answerArray = this.get('answers').toArray();
-      answerArray.forEach(function(answer) {
-        answer.set('selected', "false");
-        answer.save();
+      var playerAnswerArray = this.get('playerAnswers').toArray();
+      playerAnswerArray.forEach(function(playerAnswer) {
+        playerAnswer.set('selected', "false");
+        playerAnswer.save();
       });
       cardSelected.set('selected', true);
       cardSelected.save();

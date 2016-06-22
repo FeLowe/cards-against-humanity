@@ -1,9 +1,9 @@
-{{#each answers as |answer|}}
+{{#each playerAnswers as |playerAnswer|}}
 
 <div class="answerTile">
-  <p>{{answer.cardcontent}}</p>
-  <p>{{answer.id}}</p>
+  <p>{{playerAnswer.cardcontent}}</p>
+  <p>{{playerAnswer.id}}</p>
 
-  <button id="selectCard" class="btn"{{action 'selectCard' answer}}>select</button>
+  <button id="selectCard" class="btn"{{action 'selectCard' playerAnswer}}>select</button>
 </div>
 {{/each}}

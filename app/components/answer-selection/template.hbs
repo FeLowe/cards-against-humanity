@@ -1,2 +1,15 @@
+{{#if allSelected}}
+  <div id="voteBox">
+    <h2>VOTE</h2>
+    {{#each selectedAnswers as |selectedAnswer|}}
+      {{selectedAnswer.cardcontent}}
+      <button id="voteButton" class="btn"{{action 'vote' selectedAnswer}}>vote</button>
+    {{/each}}
+  </div>
+{{else}}
   {{selectedStatus.cardcontent}}
-  {{answer-tile answers=answers selectCard="selectCard"}}
+  <div id="cards">
+
+    {{answer-tile playerAnswers=playerAnswers allAnswers=allAnswers selectCard="selectCard"}}
+  </div>
+{{/if}}

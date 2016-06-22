@@ -6,7 +6,7 @@
   <hr>
   <div class="row">
     <p>{{model.username}}</p>
-    {{answer-selection answers=model.player.answers}}
+    {{answer-selection playerAnswers=model.player.answers allAnswers=model.allAnswers}}
     {{#link-to "index"}}home{{/link-to}}
   </div>
   </div>
