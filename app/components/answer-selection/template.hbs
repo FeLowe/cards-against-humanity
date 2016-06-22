@@ -1,2 +1,9 @@
+<div class="row">
+  {{#each answers as |answer|}}
+  {{answer-tile answer=answer answers=answers selectCard="selectCard"}}
+  {{/each}}
+</div>
+<hr>
+<div id="selected-card"class="row">
   {{selectedStatus.cardcontent}}
-  {{answer-tile answers=answers selectCard="selectCard"}}
+</div>

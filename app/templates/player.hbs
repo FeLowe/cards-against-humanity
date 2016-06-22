@@ -1,13 +1,37 @@
 <div class="container">
-  <div class="row">
-
-  {{question-tile questions=model.questions}}
-
-  <hr>
-  <div class="row">
-    <p>{{model.username}}</p>
-    {{answer-selection answers=model.player.answers}}
-    {{#link-to "index"}}home{{/link-to}}
+  <div class="row player-name">
+    {{model.player.username}}
   </div>
+  <div class="row">
+    {{question-tile questions=model.questions}}
+  </div>
+  <hr>
+    <div class="row">
+      {{answer-selection answers=model.player.answers}}
+    </div>
+</div>
+
+
+
+<!-- <div class="container">
+  <div class="row">
+    <p>test before{{model.username}}test after</p> -->
+    <!-- why doesnt this line work -->
+    <!-- {{question-tile questions=model.questions}}
+  </div>
+  <hr>
+
+  <div class="row">
+    <div id="answer-selected" class="row">
+      {{answer-tile answers=model.player.answers}}
+    </div> -->
+    <!-- answer-tile template -->
+    <!-- <hr>
   </div>
 </div>
+
+<div class="container">
+  <div class="row">
+    {{answer-selection answers=model.player.answers}}
+  </div>
+</div> -->
