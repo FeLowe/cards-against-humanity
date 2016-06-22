@@ -29,7 +29,7 @@ export default Ember.Component.extend({
         userpoints: 0,
       };
 
-      this.set('isShowingForm', false),
+      this.set('isShowingForm', false);
       this.sendAction('submitPlayers', params1, params2, params3, params4, this.get('answers'), this.get('questions'));
       this.set('username1', '');
       this.set('userage1', '');

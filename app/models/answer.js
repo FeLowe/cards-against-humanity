@@ -8,4 +8,5 @@ export default DS.Model.extend({
   selected: DS.attr(false),
   player: DS.belongsTo('player', {async: true}),
   votedBy: DS.hasMany('player', {async: true})
+
 });

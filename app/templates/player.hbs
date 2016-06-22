@@ -1,6 +1,13 @@
 <div class="container">
   <div class="row">
-    {{answer-tile answers=model.player.answers}}
-  </div>
+
   {{question-tile questions=model.questions}}
+
+  <hr>
+  <div class="row">
+    <p>{{model.username}}</p>
+    {{answer-selection answers=model.player.answers}}
+    {{#link-to "index"}}home{{/link-to}}
+  </div>
+  </div>
 </div>

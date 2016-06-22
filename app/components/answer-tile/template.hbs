@@ -1,9 +1,9 @@
 {{#each answers as |answer|}}
-  <div class="col-md-2">
-    <div class="panel panel-default">
-      <div class="panel-body">
-        <p>{{answer.cardcontent}}</p>
-      </div>
-    </div>
-  </div>
+
+<div class="answerTile">
+  <p>{{answer.cardcontent}}</p>
+  <p>{{answer.id}}</p>
+
+  <button id="selectCard" class="btn"{{action 'selectCard' answer}}>select</button>
+</div>
 {{/each}}
