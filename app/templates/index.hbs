@@ -1,4 +1,19 @@
-<div class="container">
+<div class="container" id="index">
+  <div class="row">
+    <div class="col-sm-6">
+      <div id="black-home-page-card">
+        <p> lorium ipsom </p>
+      </div>
+    </div>
+
+    <div class="col-sm-6">
+      <div id="white-home-page-card">
+        <p> lorium ipsom </p>
+        {{submit-players submitPlayers="submitPlayers" answers=model.answers questions=model.questions}}
+
+      </div>
+    </div>
+  </div>
   <div class="row">
     {{#each model.players as |player|}}
       <div class="col-sm-3 playerTitle">
@@ -7,8 +22,7 @@
     {{/each}}
   </div>
   <div class="row">
-    <div class="col-sm-12">
-      {{submit-players submitPlayers="submitPlayers" answers=model.answers questions=model.questions}}
+    <div class="col-sm-3">
       {{delete-players players=model.players answers=model.answers questions=model.questions deletePlayers="deletePlayers"}}
     </div>
   </div>
