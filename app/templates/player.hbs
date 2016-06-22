@@ -1,13 +1,13 @@
 <div class="container">
-  <div class="row">
+  <div class="container">
 
   {{question-tile questions=model.questions}}
 
+</div>
   <hr>
   <div class="row">
     <p>{{model.username}}</p>
-    {{answer-selection playerAnswers=model.player.answers allAnswers=model.allAnswers transIndex="transIndex"}}
+    {{answer-selection playerAnswers=model.player.answers allAnswers=model.allAnswers player=model.player transIndex="transIndex"}}
     {{#link-to "index"}}home{{/link-to}}
-  </div>
   </div>
 </div>

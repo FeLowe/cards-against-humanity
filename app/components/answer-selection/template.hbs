@@ -1,11 +1,16 @@
 {{#if allSelected}}
-  <div id="voteBox">
-    <h2>VOTE</h2>
-    {{#each selectedAnswers as |selectedAnswer|}}
-      {{selectedAnswer.cardcontent}}
-      <button id="voteButton" class="btn"{{action 'vote' selectedAnswer}}>vote</button>
-    {{/each}}
-  </div>
+  {{#if allVoted}}
+    <h2>WINNER</h2>
+  {{else}}
+    <div id="voteBox">
+      <h2>{{player.username}}'S VOTE</h2>
+      {{#each selectedAnswers as |selectedAnswer|}}
+        {{selectedAnswer.cardcontent}}
+        {{selectedAnswer.id}}
+        <button id="voteButton" class="btn voteButtons"{{action 'vote' selectedAnswer}}>vote</button>
+      {{/each}}
+    </div>
+  {{/if}}
 {{else}}
   {{selectedStatus.cardcontent}}
   <div id="cards">

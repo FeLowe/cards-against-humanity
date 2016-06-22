@@ -8,6 +8,7 @@ export default Ember.Component.extend({
       answerArray.forEach(function(answer) {
         answer.set('drawn', "false");
         answer.set('selected', "false");
+        answer.set('votedBy', []);
         answer.save();
       });
       var questionArray = questions.toArray();

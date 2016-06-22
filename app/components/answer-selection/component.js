@@ -4,6 +4,7 @@ export default Ember.Component.extend({
 
   selectedStatus: "No selection yet",
   allSelected: false,
+  voted: false,
   selectedAnswers: [],
 
   actions: {
@@ -22,7 +23,11 @@ export default Ember.Component.extend({
           this.set('allSelected', true);
         }
       });
-      this.sendAction('transIndex');
+    },
+    vote(selectedAnswer) {
+      selectedAnswer.get('votedBy').addObject(this.get('player'));
+      selectedAnswer.save();
+      $('.voteButtons').hide();
     }
   }
 });
