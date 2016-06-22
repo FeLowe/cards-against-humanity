@@ -7,7 +7,6 @@ export default Ember.Component.extend({
       var answerArray = answers.toArray();
       answerArray.forEach(function(answer) {
         answer.set('drawn', "false");
-        answer.set('selected', false);
         answer.save();
       });
       var questionArray = questions.toArray();

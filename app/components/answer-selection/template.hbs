@@ -1,5 +1,3 @@
 <h2>EVERYBODY'S ANSWER</h2>
   {{selectedStatus.cardcontent}}
-  {{#each selectedAnswer as |answer|}}
-  <p>{{answer.cardcontent}}</p>
-  {{/each}}
+  {{answer-tile answers=answers selectCard="selectCard"}}

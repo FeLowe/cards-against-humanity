@@ -11,7 +11,7 @@ export default Ember.Component.extend({
       cardSelected.set('selected', true);
       cardSelected.save();
       //remember to reset later
-
+      this.sendAction('selectCard', cardSelected);
     }
   }
 });
