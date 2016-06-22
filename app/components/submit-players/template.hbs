@@ -3,13 +3,13 @@
 <form id='submitPlayers'{{action 'submitPlayers' on="submit"}}>
 
   <div class="form-group">
-    <label for="username1" class="">Name: </label>
-    {{input value=username1 class="form-control"}}
+    <!-- <label for="username1" class=""></label> -->
+    {{input value=username1 class="form-control" placeholder="NAME"}}
   </div>
 
   <div class="form-group">
-    <label for="userage1" class="">Age: </label>
-    {{input type='number' value=userage1 class="form-control"}}
+    <!-- <label for="userage1" class=""></label> -->
+    {{input type='number' value=userage1 class="form-control" placeholder="AGE"}}
   </div>
 <!--
   <label for="username2" class="">Name: </label>
@@ -30,8 +30,8 @@
   <label for="userage4" class="">Age: </label>
   {{input type='number' value=userage4 class="form-control"}} -->
 
-  <button {{action 'submitPlayers'}} class="btn btn-success">Save</button>
+  <button {{action 'submitPlayers'}} class="btn btn-success" >Save</button>
 </form>
 {{else}}
-  <button {{action "showForm"}}class="btn btn-primary" type="submit">Add Player</button>
+  <button {{action "showForm"}}class="btn btn-primary" type="submit" id="submitPlayers">Add Player</button>
 {{/if}}

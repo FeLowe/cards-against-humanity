@@ -57,22 +57,32 @@ body {
   background-image: url('styles/img/cah.jpg');
   background-color: blue;
 }*/
+#submitPlayers {
+  position: absolute;
+  bottom: 20px;
+  right: 45px;
+}
+
+
+#more-line-height{
+  line-height: 2em;
+}
 
 .form-control{
-  width: 50%;
+  width: 100%;
   display: inline;
 }
 
 #white-home-page-card{
   display:inline-block;
-  font-size: 20px;
+  /*font-size: 20px;*/
   border:1px solid #cccccc;
   background:white;
   color: #000;
   width:100%;
   height:700px;
-  /*padding:15px;
-  margin-top:10px;
+  padding:40px;
+  /*margin-top:10px;
   margin-right:10px;
   float:left;*/
   box-shadow:1px 1px 1px #ccc;
@@ -81,14 +91,14 @@ body {
 
 #black-home-page-card{
   display:inline-block;
-  font-size: 20px;
+  /*font-size: 20px;*/
   border:1px solid #cccccc;
   background: #000;
   color: white;
   width: 100%;
   height: 700px;
-  /*padding:15px;
-  margin-top:10px;
+  padding:40px;
+  /*margin-top:10px;
   margin-right:10px;
   float:left;*/
   box-shadow:1px 1px 1px #ccc;
