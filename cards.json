@@ -1,4 +1,50 @@
-{ "questions":[
+{ "players": [
+  {
+    "username": "",
+    "userpoints": 0
+  },
+  {
+    "username": "",
+    "userpoints": 0
+  },
+  {
+    "username": "",
+    "userpoints": 0
+  },
+  {
+    "username": "",
+    "userpoints": 0
+  },
+  {
+    "username": "",
+    "userpoints": 0
+  },
+  {
+    "username": "",
+    "userpoints": 0
+  },
+  {
+    "username": "",
+    "userpoints": 0
+  },
+  {
+    "username": "",
+    "userpoints": 0
+  },
+  {
+    "username": "",
+    "userpoints": 0
+  },
+  {
+    "username": "",
+    "userpoints": 0
+  },
+  {
+    "username": "",
+    "userpoints": 0
+  }
+],
+  "questions":[
   {
     "cardcontent": "How did I lose my virginity?"
   },

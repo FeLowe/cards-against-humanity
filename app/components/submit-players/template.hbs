@@ -2,29 +2,17 @@
 
 <form id='submitPlayers' class="newGame form-group" {{action 'submitPlayers' on="submit"}}>
 
+  <label for="username0" class="">Name: </label>
+  {{input value=username0 class="form-control"}}
+
   <label for="username1" class="">Name: </label>
   {{input value=username1 class="form-control"}}
-
-  <label for="userage1" class="">Age: </label>
-  {{input type='number' value=userage1 class="form-control"}}
 
   <label for="username2" class="">Name: </label>
   {{input value=username2 class="form-control"}}
 
-  <label for="userage2" class="">Age: </label>
-  {{input type='number' value=userage2 class="form-control"}}
-
   <label for="username3" class="">Name: </label>
   {{input value=username3 class="form-control"}}
-
-  <label for="userage3" class="">Age: </label>
-  {{input type='number' value=userage3 class="form-control"}}
-
-  <label for="username4" class="">Name: </label>
-  {{input value=username4 class="form-control"}}
-
-  <label for="userage4" class="">Age: </label>
-  {{input type='number' value=userage4 class="form-control"}}
 
   <button {{action 'submitPlayers'}}>Save</button>
 </form>

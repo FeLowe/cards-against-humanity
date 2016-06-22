@@ -9,5 +9,10 @@ export default Ember.Route.extend({
       player: this.store.findRecord('player', params.player_id)
     });
   },
+  actions: {
+    transIndex() {
+      this.transitionTo('index');
+    }
+  }
 
 });

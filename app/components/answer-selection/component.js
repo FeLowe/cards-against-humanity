@@ -17,10 +17,12 @@ export default Ember.Component.extend({
           selectedArray.push(answer);
           this.set('selectedAnswers', selectedArray);
         }
+        //change to players.length later for different player amounts
         if (selectedCount === 4) {
           this.set('allSelected', true);
         }
-      })
+      });
+      this.sendAction('transIndex');
     }
   }
 });
