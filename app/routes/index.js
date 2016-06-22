@@ -6,6 +6,7 @@ export default Ember.Route.extend({
       questions: this.store.findAll('question'),
       answers: this.store.findAll('answer'),
       players: this.store.findAll('player'),
+      game: this.store.findAll('game')
     });
   },
   actions: {

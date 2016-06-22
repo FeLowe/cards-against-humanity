@@ -1,4 +1,8 @@
-{ "players": [
+{ "games": [
+  {
+    "round": 0
+  }
+  ], "players": [
   {
     "username": "",
     "userpoints": 0

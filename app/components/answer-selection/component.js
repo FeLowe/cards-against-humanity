@@ -24,10 +24,35 @@ export default Ember.Component.extend({
         }
       });
     },
-    vote(selectedAnswer) {
-      selectedAnswer.get('votedBy').addObject(this.get('player'));
-      selectedAnswer.save();
+    vote(votedAnswer) {
+      votedAnswer.get('votedBy').addObject(this.get('player'));
+      votedAnswer.save();
       $('.voteButtons').hide();
+      var totalVotes = 0;
+      var winnerVotes = 0;
+      var winners = [];
+      var currentGame = this.get('game');
+      var answerChoices = this.get('selectedAnswers');
+
+      this.get('selectedAnswers').forEach((answer) => {
+        totalVotes += answer.get('votedBy').toArray().length;
+      });
+      if (totalVotes >= this.get('game.players').toArray().length) {
+        console.log("hello");
+        console.log(this.get('selectedAnswers'));
+        answerChoices.forEach((answer) => {
+          if(answer.get('votedBy').toArray().length >= winnerVotes) {
+            if (answer.get('votedBy').toArray().length === winnerVotes){
+              currentGame.push(answer.get('player'));
+            } else {
+              currentGame.set('winners', []);
+              currentGame.get('winners').addObjects(answer.get('player'));
+              winnerVotes = answer.get('votedBy').toArray().length;
+            }
+          }
+        });
+        console.log(winners[0]);
+      }
     }
   }
 });

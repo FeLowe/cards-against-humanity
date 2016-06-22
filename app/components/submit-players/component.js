@@ -17,6 +17,12 @@ export default Ember.Component.extend({
         newPlayer.save();
         playersPlaying.push(newPlayer);
       }
+
+      this.get('game').forEach((game) => {
+        game.get('players').addObjects(playersPlaying);
+        game.save();
+      });
+
       this.set('isShowingForm', false);
       this.sendAction('submitPlayers', playersPlaying, this.get('answers'), this.get('questions'));
       this.set('username1', '');
