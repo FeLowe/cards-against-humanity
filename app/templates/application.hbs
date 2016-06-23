@@ -18,7 +18,7 @@
         <span class="icon-bar"></span>
       </button>
 
-      {{#link-to 'index'}}<div class="navbar-brand"id="logoName"> LOGO</div>
+      {{#link-to 'index'}}<div class="navbar-brand"> Developers Against Humanity</div>
 
       {{/link-to}}
     </div>
@@ -31,6 +31,9 @@
         <li>
           {{#link-to 'index'}}home{{/link-to}}
         </li>
+        <li>
+          {{#link-to 'about'}}about us{{/link-to}}
+        </li>
       </ul>
     </div>
     <!-- /.navbar-collapse -->
@@ -38,6 +41,28 @@
   <!-- /.container -->
 </nav>
 
-<h2 id="title">Developers Against Humanity</h2>
+<!-- <h2 id="title"></h2> -->
 
 {{outlet}}
+<div>
+  <img src="assets/images/cah2.jpg" alt="">
+</div>
+
+<footer>
+  <nav class="navbar navbar-inverse navbar-fixed-bottom">
+  <div class="container">
+    <div class="text-center center-block">
+    <p id="checkUs"></p>
+      <a href="https://www.facebook.com"><i id="social-fb" class="fa fa-facebook-square fa-3x social" style="font-size:45px;color:white"></i></a>
+      <a href="https://twitter.com"><i id="social-tw" class="fa fa-twitter-square fa-3x social" style="font-size:45px;color:white"></i></a>
+      <a href="https://plus.google.com"><i id="social-gp" class="fa fa-google-plus-square fa-3x social" style="font-size:45px;color:white"></i></a>
+      <a href=""><i id="social-em" class="fa fa-envelope-square fa-3x social" style="font-size:45px;color:white"></i></a>
+    </div>
+  </div>
+  <div class="footer-copyright">
+    <div class="footer-copyright-text clearfix">
+      <span id="copyright" class="copyright-text pull-left">&copy; 2016. All rights reserved.</span>
+    </div>
+  </div>
+</nav>
+</footer>

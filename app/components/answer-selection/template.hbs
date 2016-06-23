@@ -1,5 +1,4 @@
 
-
 {{#if allSelected}}
   {{#if voted}}
     {{#if roundComplete}}
@@ -26,9 +25,10 @@
   {{#if playerSelected}}
   <h2>Waiting for all players to select...</h2>
   {{else}}
-    {{selectedStatus.cardcontent}}
+    <div id="selected-card"class="row">
+      {{selectedStatus.cardcontent}}
+    </div>
     <div id="cards">
-
       {{answer-tile playerAnswers=playerAnswers allAnswers=allAnswers selectCard="selectCard"}}
     </div>
   {{/if}}
