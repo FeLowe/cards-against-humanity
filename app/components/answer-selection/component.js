@@ -13,7 +13,6 @@ export default Ember.Component.extend({
     if (this.get('game.votes') >= this.get('game.players.length')) {
       this.get('game.winners').then((winners) => {
         this.set('results', winners);
-        console.log(winners.length);
       });
       this.set('roundComplete', true);
     }
@@ -53,34 +52,41 @@ export default Ember.Component.extend({
       votedAnswer.get('votedBy').addObject(this.get('player'));
       votedAnswer.save();
       $('.voteButtons').hide();
-      var totalVotes = 0;
       var winnerVotes = 0;
 
       var currentGame = this.get('game');
+      console.log(currentGame);
+      var totalVotes = currentGame.get('votes');
+      var playerCount = currentGame.get('players.length');
 
-      var answerChoices = this.get('selectedAnswers');
+      var answerChoices = currentGame.get('answers');
 
-
-      currentGame.set('votes', currentGame.get('votes') + 1);
+      // currentGame.set('votes', currentGame.get('votes') + 1);
       currentGame.save();
+      currentGame.set('votes', totalVotes + 1);
+      currentGame.save();
+      // this.get('selectedAnswers').forEach((answer) => {
+      //   totalVotes += answer.get('votedBy.length');
+      // });
+      console.log("total votes", totalVotes);
 
-      this.get('selectedAnswers').forEach((answer) => {
-        totalVotes += answer.get('votedBy.length');
-      });
-
-      if (totalVotes >= currentGame.get('players.length')) {
-
+      if (currentGame.get('votes') >= currentGame.get('players.length')) {
         answerChoices.forEach((answer) => {
-          if (answer.get('votedBy.length') >= winnerVotes) {
-            if (answer.get('votedBy.length') === winnerVotes){
+          debugger;
+          var answerVotes = answer.get('votedBy.length');
+          console.log(answer.get('cardcontent'), "answerVotes", answerVotes);
+          console.log("winnerVotes", winnerVotes);
+          if (answerVotes >= winnerVotes) {
+            if (answerVotes === winnerVotes){
+              console.log("equal");
               currentGame.get('winners').then((winners) => {
                 winners.addObject(answer);
                 currentGame.save();
               });
             } else {
               currentGame.set('winners', []);
-              winnerVotes = answer.get('votedBy.length');
-
+              winnerVotes = answerVotes;
+              console.log("greater");
               currentGame.get('winners').then((winners) => {
                 winners.addObject(answer);
                 currentGame.save();
