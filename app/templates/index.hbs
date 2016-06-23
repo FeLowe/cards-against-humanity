@@ -1,15 +1,38 @@
-<div class="container">
+<div class="container" id="index">
   <div class="row">
-    {{#each model.players as |player|}}
+    <div class="col-sm-6">
+      <div id="black-home-page-card">
+        <h1>When I think about ember I _________. </h1>
+      </div>
+    </div>
+
+      <div class="col-sm-6">
+        <div id="white-home-page-card">
+          <h3 id="more-line-height">
+            ...think about Donald Trump<br>
+            ...curl up in the fetal position <br>
+            ...want to punch cute babies <br>
+            ...want to toss this iMac from the 8th floor<br>
+            ...profess my undying love for Angular2<br>
+            ...realize how much I &hearts; Java<br>
+            ...imagine us taking over the tech world as Bonnie and Clyde
+          </h3>
+          {{submit-players submitPlayers="submitPlayers" answers=model.answers questions=model.questions players=model.players game=model.game}}
+
+        </div>
+      </div>
+  </div>
+    <div class="row">
+      {{#each model.players as |player|}}
       <div class="col-sm-3 playerTitle">
+        <!-- {{#link-to 'player' player.id}}<button id="play-button"class="btn btn-success">PLAY</button>{{/link-to}} -->
         {{#link-to 'player' player.id}}{{player.username}}{{/link-to}}
       </div>
-    {{/each}}
-  </div>
-  <div class="row">
-    <div class="col-sm-12">
-      {{submit-players submitPlayers="submitPlayers" answers=model.answers questions=model.questions players=model.players game=model.game}}
+      {{/each}}
+    </div>
+    <div class="row">
+      <div class="col-sm-3">
       {{delete-players players=model.players answers=model.answers questions=model.questions game=model.game deletePlayers="deletePlayers"}}
     </div>
+    </div>
   </div>
-</div>

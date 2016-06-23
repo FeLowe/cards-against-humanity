@@ -1,5 +1,6 @@
 {{#if isShowingForm}}
 
+
 <form id='submitPlayers' class="newGame form-group" {{action 'submitPlayers' on="submit"}}>
 
   <label for="username0" class="">Name: </label>
@@ -14,8 +15,8 @@
   <label for="username3" class="">Name: </label>
   {{input value=username3 class="form-control"}}
 
-  <button {{action 'submitPlayers'}}>Save</button>
+  <button {{action 'submitPlayers'}} class="btn btn-success" >Save</button>
 </form>
 {{else}}
-  <button {{action "showForm"}}class="btn btn-primary btn-block" type="submit">Add Player</button>
+  <button {{action "showForm"}}class="btn btn-primary" type="submit" id="submitPlayers">add player</button>
 {{/if}}
