@@ -23,7 +23,7 @@ body {
   border:1px solid #cccccc;
   background:white;
   color: black;
-  width:300px;
+  width:200px;
   /*height:450px;*/
   padding:15px;
   margin-top:10px;
@@ -53,16 +53,18 @@ body {
 }
 
 /*INDEX ROUTE EVERYTHING*/
-/*#index{
-  background-image: url('styles/img/cah.jpg');
-  background-color: blue;
-}*/
+img{
+margin-left: -535px;
+}
 #submitPlayers {
   position: absolute;
   bottom: 20px;
   right: 45px;
 }
 
+/*TEST*/
+
+/*END TEST*/
 
 #more-line-height{
   line-height: 2em;
@@ -111,8 +113,8 @@ body {
   border:1px solid #cccccc;
   background:white;
   color: black;
-  width:300px;
-  /*height:450px;*/
+  width:200px;
+  height:200px;
   padding:15px;
   margin-top:10px;
   margin-right:10px;
@@ -125,6 +127,10 @@ body {
   font-family: sans-serif;
   letter-spacing: 1px;
   font-size: xx-large;
+}
+.btn-primary{
+  background: black;
+  color: white;
 }
 /*RULES ROUTE EVERYTHING*/
 #rules{
@@ -140,8 +146,8 @@ footer {
 }
 
 #copyright{
-  color:#9d9d9d;
-  font-size: 10px;
+  color:white;
+  font-size: 13px;
 }
 .social:hover {
   -webkit-transform: scale(1.1);
