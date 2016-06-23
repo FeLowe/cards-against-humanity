@@ -25,7 +25,6 @@
     <div class="row">
       {{#each model.players as |player|}}
       <div class="col-sm-3 playerTitle">
-        <!-- {{#link-to 'player' player.id}}<button id="play-button"class="btn btn-success">PLAY</button>{{/link-to}} -->
         {{#link-to 'player' player.id}}{{player.username}}{{/link-to}}
       </div>
       {{/each}}

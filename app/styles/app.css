@@ -53,9 +53,12 @@ body {
 }
 
 /*INDEX ROUTE EVERYTHING*/
-img{
-margin-left: -535px;
+.footer-image-center {
+  display:flex;
+  justify-content:center;
+  align-items:center;
 }
+
 #submitPlayers {
   position: absolute;
   bottom: 20px;
@@ -133,10 +136,17 @@ margin-left: -535px;
   letter-spacing: 1px;
   font-size: xx-large;
 }
-.btn-primary{
-  background: black;
-  color: white;
+
+.change-button  {
+  color: #fff;
+  background-color: #000;
+  border-color: #eee;
 }
+
+.change-button:hover, .change-button:focus, .change-button.focus {
+ color: #E0E0E0;
+}
+
 /*RULES ROUTE EVERYTHING*/
 #rules{
   margin-top: 95px;
