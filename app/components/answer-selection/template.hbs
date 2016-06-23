@@ -3,8 +3,10 @@
   {{#if voted}}
     {{#if roundComplete}}
       {{#each game.winners as |result|}}
-        <h2>{{result.cardcontent}}</h2>
-        <h2>{{result.player.username}}</h2>
+        <div class="answerTile">
+          <p>{{result.cardcontent}}</p>
+          <p>{{result.player.username}}'s answer</p>
+        </div>
       {{/each}}
     {{else}}
       <h2>Waiting for all votes...</h2>
@@ -14,9 +16,13 @@
     <div id="voteBox">
       <h2>{{player.username}}'S VOTE</h2>
       {{#each game.answers as |selectedAnswer|}}
-        {{selectedAnswer.cardcontent}}
-        {{selectedAnswer.id}}
-        <button id="voteButton" class="btn voteButtons"{{action 'vote' selectedAnswer}}>vote</button>
+        <div class="answerTile">
+
+          <p>{{selectedAnswer.cardcontent}}</p>
+          <!-- {{selectedAnswer.id}} -->
+          <button id="voteButton" class="btn change-button position-buttons-bottom-right"{{action 'vote' selectedAnswer}}>vote</button>
+          <br>
+        </div>
       {{/each}}
     </div>
   {{/if}}
@@ -25,9 +31,9 @@
   {{#if playerSelected}}
   <h2>Waiting for all players to select...</h2>
   {{else}}
-    <div id="selected-card"class="row">
+    <!-- <div id="selected-card"class="row">
       {{selectedStatus.cardcontent}}
-    </div>
+    </div> -->
     <div id="cards">
       {{answer-tile playerAnswers=playerAnswers allAnswers=allAnswers selectCard="selectCard"}}
     </div>
