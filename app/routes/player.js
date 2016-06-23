@@ -11,9 +11,8 @@ export default Ember.Route.extend({
     });
   },
   actions: {
-    transIndex() {
-      this.transitionTo('index');
-    }
-  }
-
+    // nextRound() {
+    //
+    // }
+  },
 });
