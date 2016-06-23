@@ -1,22 +1,28 @@
 {{#if isShowingForm}}
 
 
-<form id='submitPlayers' class="newGame form-group" {{action 'submitPlayers' on="submit"}}>
+<form {{action 'submitPlayers' on="submit"}}>
 
-  <label for="username0" class="">Name: </label>
-  {{input value=username0 class="form-control"}}
+  <div class="form-group">
+    {{input value=username0 class="form-control" placeholder="NAME"}}
+  </div>
 
-  <label for="username1" class="">Name: </label>
-  {{input value=username1 class="form-control"}}
+  <div class="form-group">
+    {{input value=username1 class="form-control" placeholder="NAME"}}
+  </div>
 
-  <label for="username2" class="">Name: </label>
-  {{input value=username2 class="form-control"}}
+  <div class="form-group">
+    {{input value=username2 class="form-control" placeholder="NAME"}}
+  </div>
 
-  <label for="username3" class="">Name: </label>
-  {{input value=username3 class="form-control"}}
+  <div class="form-group">
+    {{input value=username3 class="form-control" placeholder="NAME"}}
+  </div>
 
-  <button {{action 'submitPlayers'}} class="btn btn-success" >Save</button>
+
+
+  <button {{action 'submitPlayers'}} class="btn change-button" >Save</button>
 </form>
 {{else}}
-  <button {{action "showForm"}}class="btn btn-primary" type="submit" id="submitPlayers">add player</button>
+<button {{action "showForm"}}class="btn change-button" type="submit" id='submitPlayers'>add player</button>
 {{/if}}
