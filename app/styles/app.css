@@ -3,12 +3,12 @@ body {
 }
 .questionTile {
   display:inline-block;
-  /*font-size: 30px;*/
+  position: relative;
   border:1px solid #cccccc;
   background:black;
   color: white;
   width:300px;
-  /*height:450px;*/
+  height:200px;
   padding:15px;
   margin-top:10px;
   margin-right:10px;
@@ -19,12 +19,12 @@ body {
 
 .answerTile {
   display:inline-block;
-  /*font-size: 30px;*/
+  position: relative;
   border:1px solid #cccccc;
   background:white;
   color: black;
   width:200px;
-  /*height:450px;*/
+  height:200px;
   padding:15px;
   margin-top:10px;
   margin-right:10px;
@@ -33,6 +33,9 @@ body {
   border-radius:5px;
 }
 
+.questionTile > p, .answerTile > p {
+  font-size: 20px;
+}
 /*NAV BAR EVERYTHING*/
 #nav-bar-links{
   float: right;
@@ -53,26 +56,37 @@ body {
 }
 
 /*INDEX ROUTE EVERYTHING*/
+.playerTitle > a {
+  font-size: xx-large;
+  color: black;
+  font-weight: 500;
+  text-shadow: 2px 2px 3px rgba(0,0,0,0.3);
+}
+
 .footer-image-center {
   display:flex;
   justify-content:center;
   align-items:center;
 }
 
-#submitPlayers {
+.position-player-buttons-submit {
+  position: absolute;
+  bottom: 20px;
+  /*left: 45px;*/
+  /*didnt need left or right*/
+}
+
+.position-player-buttons-delete {
   position: absolute;
   bottom: 20px;
   right: 45px;
 }
-#play-button{
+
+/*#play-button{
   position: absolute;
   bottom: 20px;
   right:0px;
-}
-
-/*TEST*/
-
-/*END TEST*/
+}*/
 
 #more-line-height{
   line-height: 2em;
@@ -81,6 +95,7 @@ body {
 .form-control{
   width: 100%;
   display: inline;
+  height: 33px;
 }
 
 #white-home-page-card{
@@ -115,20 +130,10 @@ body {
   border-radius:5px;
 }
 /* PLAYER ROUTE EVERYTHING*/
-#selected-card{
-  display:inline-block;
-  /*font-size: 30px;*/
-  border:1px solid #cccccc;
-  background:white;
-  color: black;
-  width:200px;
-  height:200px;
-  padding:15px;
-  margin-top:10px;
-  margin-right:10px;
-  float:left;
-  box-shadow:1px 1px 1px #ccc;
-  border-radius:5px;
+.position-buttons-bottom-right {
+  position: absolute;
+  bottom: 20px;
+  right: 17px;
 }
 
 .player-name {

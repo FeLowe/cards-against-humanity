@@ -19,10 +19,9 @@
     {{input value=username3 class="form-control" placeholder="NAME"}}
   </div>
 
-
-
   <button {{action 'submitPlayers'}} class="btn change-button" >Save</button>
 </form>
+
 {{else}}
-<button {{action "showForm"}}class="btn change-button" type="submit" id='submitPlayers'>add player</button>
+  <button {{action "showForm"}}class="btn change-button position-player-buttons-submit" type="submit">Add Players</button>
 {{/if}}
