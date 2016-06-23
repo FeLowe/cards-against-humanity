@@ -61,6 +61,11 @@ margin-left: -535px;
   bottom: 20px;
   right: 45px;
 }
+#play-button{
+  position: absolute;
+  bottom: 20px;
+  right:0px;
+}
 
 /*TEST*/
 
