@@ -23,6 +23,8 @@ export default Ember.Component.extend({
       game.set('round', 1);
       game.set('winners', []);
       game.set('votes', 0);
+      game.set('selected', 0);
+      game.set('answers', []);
       game.save();
 
       this.sendAction('deletePlayers', players);

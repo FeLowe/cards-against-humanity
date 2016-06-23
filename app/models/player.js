@@ -5,6 +5,5 @@ import DS from 'ember-data';
 export default DS.Model.extend({
   username: DS.attr(),
   userpoints: DS.attr(),
-  answers: DS.hasMany('answer', {inverse: null}),
-  game: DS.belongsTo('game', {inverse: null})
+  answers: DS.hasMany('answer', {inverse: null})
 });

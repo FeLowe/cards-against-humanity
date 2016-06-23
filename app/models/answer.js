@@ -7,6 +7,6 @@ export default DS.Model.extend({
   drawn: DS.attr(false),
   selected: DS.attr(false),
   player: DS.belongsTo('player', {async: true}),
-  votedBy: DS.hasMany('player', {async: true})
-
+  votedBy: DS.hasMany('player', {async: true}),
+  game: DS.belongsTo('game', {inverse: null})
 });

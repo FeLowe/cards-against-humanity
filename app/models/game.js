@@ -5,6 +5,8 @@ import DS from 'ember-data';
 export default DS.Model.extend({
   players: DS.hasMany('player', {async:true}),
   round: DS.attr(),
-  winners: DS.hasMany('player', {async:true}),
+  winners: DS.hasMany('answer', {inverse:null}),
   votes: DS.attr(),
+  selected: DS.attr(),
+  answers: DS.hasMany('answer', {inverse:null}),
 });
