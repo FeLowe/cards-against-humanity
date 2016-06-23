@@ -11,10 +11,7 @@ export default Ember.Route.extend({
   },
   actions: {
     submitPlayers(playersPlaying, answers, questions) {
-      var answersDealt = function() {
-
-        // return answerHand;
-      };
+    
       playersPlaying.forEach(function(player) {
         var allAnswers = answers.toArray();
         var answerHand = [];
