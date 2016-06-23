@@ -12,23 +12,26 @@ export default Ember.Route.extend({
   actions: {
     submitPlayers(playersPlaying, answers, questions) {
       var answersDealt = function() {
+
+        // return answerHand;
+      };
+      playersPlaying.forEach(function(player) {
         var allAnswers = answers.toArray();
         var answerHand = [];
 
         while (answerHand.length < 10) {
           var rand = Math.floor(Math.random() * allAnswers.length);
           if (allAnswers[rand].get('drawn') === "false") {
+            var answer = allAnswers[rand];
             allAnswers[rand].set('drawn', "true");
+            answer.set('player', player);
             allAnswers[rand].save();
             answerHand.push(allAnswers[rand]);
           } else {
             rand = Math.floor(Math.random() * allAnswers.length);
           }
         }
-        return answerHand;
-      };
-      playersPlaying.forEach(function(player) {
-        player.get('answers').addObjects(answersDealt());
+        player.get('answers').addObjects(answerHand);
         player.save();
       });
 
@@ -44,6 +47,7 @@ export default Ember.Route.extend({
       players.forEach(function(player){
         player.set('username', "");
         player.set('userpoints', 0);
+        player.set('answers', []);
         player.save();
       });
     },
