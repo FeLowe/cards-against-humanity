@@ -3,7 +3,7 @@
 {{#if allSelected}}
   {{#if voted}}
     {{#if roundComplete}}
-      {{#each results as |result|}}
+      {{#each game.winners as |result|}}
         <h2>{{result.cardcontent}}</h2>
         <h2>{{result.player.username}}</h2>
       {{/each}}
