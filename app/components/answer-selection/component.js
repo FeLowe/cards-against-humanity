@@ -98,7 +98,30 @@ export default Ember.Component.extend({
       this.set('voted', true);
 
       if (currentGame.get('votes') >= currentGame.get('players.length')) {
-        console.log("full votes");
+        currentGame.get('winners').then((winners) => {
+          winners.forEach((winner) =>{
+            var playerWinner = winner.get('player');
+            var playerWinnerPoints = playerWinner.get('userpoints');
+            var playerId = playerWinner.get('id');
+            if (winners.length > 1) {
+
+              this.get('players').forEach((player) => {
+                if (player.get('id') === playerId) {
+                  player.set('userpoints', player.get('userpoints') + 1);
+                  player.save();
+                }
+              });
+            } else {
+              this.get('players').forEach((player) => {
+                if (player.get('id') === playerId) {
+                  player.set('userpoints', player.get('userpoints') + 2);
+                  player.save();
+                }
+              });
+            }
+          });
+        });
+        // this.sendAction('nextRound');
       }
     }
   }

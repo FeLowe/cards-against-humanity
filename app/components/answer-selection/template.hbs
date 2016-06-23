@@ -2,9 +2,10 @@
 {{#if allSelected}}
   {{#if voted}}
     {{#if roundComplete}}
+      <h2>Winner(s)</h2>
       {{#each game.winners as |result|}}
-        <h2>{{result.cardcontent}}</h2>
-        <h2>{{result.player.username}}</h2>
+        <h3>{{result.cardcontent}}</h3>
+        <h3>Player: {{result.player.username}}</h3>
       {{/each}}
     {{else}}
       <h2>Waiting for all votes...</h2>
