@@ -5,7 +5,20 @@ export default Ember.Component.extend({
   selectedStatus: "No selection yet",
   allSelected: false,
   voted: false,
+  roundComplete: false,
   selectedAnswers: [],
+  results: "Waiting for all votes...",
+  resultsObserver: Ember.observer('game.votes', function() {
+    if (this.get('game.votes') >= this.get('game.players.length')) {
+      console.log("observer");
+      this.get('game.winners').then((winners) => {
+        this.set('results', winners);
+      });
+      this.set('roundComplete', true);
+    } else {
+      this.set('results', ["Waiting for all votes..."]);
+    }
+  }),
 
   actions: {
     selectCard(cardSelected) {
@@ -35,14 +48,17 @@ export default Ember.Component.extend({
 
       var answerChoices = this.get('selectedAnswers');
 
+
+      currentGame.set('votes', currentGame.get('votes') + 1);
+
       this.get('selectedAnswers').forEach((answer) => {
         totalVotes += answer.get('votedBy.length');
       });
+
       if (totalVotes >= currentGame.get('players.length')) {
 
-
         answerChoices.forEach((answer) => {
-          if(answer.get('votedBy.length') >= winnerVotes) {
+          if (answer.get('votedBy.length') >= winnerVotes) {
             if (answer.get('votedBy.length') === winnerVotes){
               currentGame.get('winners').then((winners) => {
                 answer.get('player').then((player) => {
@@ -63,6 +79,12 @@ export default Ember.Component.extend({
             }
           }
         });
+      }
+
+      this.set('voted', true);
+
+      if (currentGame.get('votes') >= currentGame.get('players.length')) {
+        console.log("full votes");
       }
     }
   }

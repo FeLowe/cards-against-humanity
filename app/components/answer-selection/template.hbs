@@ -1,6 +1,15 @@
+
+
 {{#if allSelected}}
-  {{#if allVoted}}
-    <h2>WINNER</h2>
+  {{#if voted}}
+    {{#if roundComplete}}
+      {{#each results as |result|}}
+        <h2>{{result.username}}</h2>
+      {{/each}}
+    {{else}}
+      <h2>Waiting for all votes...</h2>
+    {{/if}}
+
   {{else}}
     <div id="voteBox">
       <h2>{{player.username}}'S VOTE</h2>
