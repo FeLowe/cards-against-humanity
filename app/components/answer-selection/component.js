@@ -7,12 +7,13 @@ export default Ember.Component.extend({
   voted: false,
   roundComplete: false,
   playerSelected: false,
+  results: [],
   selectedAnswers: [],
   resultsObserver: Ember.observer('game.votes', function() {
     if (this.get('game.votes') >= this.get('game.players.length')) {
       this.get('game.winners').then((winners) => {
         this.set('results', winners);
-
+        console.log(winners.length);
       });
       this.set('roundComplete', true);
     }
