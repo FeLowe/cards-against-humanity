@@ -55,7 +55,7 @@ export default Ember.Component.extend({
       var winnerVotes = 0;
 
       var currentGame = this.get('game');
-      console.log(currentGame);
+      // console.log(currentGame);
       var totalVotes = currentGame.get('votes');
       var playerCount = currentGame.get('players.length');
 
@@ -68,17 +68,16 @@ export default Ember.Component.extend({
       // this.get('selectedAnswers').forEach((answer) => {
       //   totalVotes += answer.get('votedBy.length');
       // });
-      console.log("total votes", totalVotes);
+      // console.log("total votes", totalVotes);
 
       if (currentGame.get('votes') >= currentGame.get('players.length')) {
         answerChoices.forEach((answer) => {
-          debugger;
           var answerVotes = answer.get('votedBy.length');
-          console.log(answer.get('cardcontent'), "answerVotes", answerVotes);
-          console.log("winnerVotes", winnerVotes);
+          // console.log(answer.get('cardcontent'), "answerVotes", answerVotes);
+          // console.log("winnerVotes", winnerVotes);
           if (answerVotes >= winnerVotes) {
             if (answerVotes === winnerVotes){
-              console.log("equal");
+              // console.log("equal");
               currentGame.get('winners').then((winners) => {
                 winners.addObject(answer);
                 currentGame.save();
@@ -86,7 +85,7 @@ export default Ember.Component.extend({
             } else {
               currentGame.set('winners', []);
               winnerVotes = answerVotes;
-              console.log("greater");
+              // console.log("greater");
               currentGame.get('winners').then((winners) => {
                 winners.addObject(answer);
                 currentGame.save();
