@@ -7,7 +7,6 @@ export default Ember.Component.extend({
   voted: false,
   roundComplete: false,
   selectedAnswers: [],
-  results: "Waiting for all votes...",
   resultsObserver: Ember.observer('game.votes', function() {
     if (this.get('game.votes') >= this.get('game.players.length')) {
       console.log("observer");
@@ -15,8 +14,6 @@ export default Ember.Component.extend({
         this.set('results', winners);
       });
       this.set('roundComplete', true);
-    } else {
-      this.set('results', ["Waiting for all votes..."]);
     }
   }),
 
@@ -50,6 +47,7 @@ export default Ember.Component.extend({
 
 
       currentGame.set('votes', currentGame.get('votes') + 1);
+      currentGame.save();
 
       this.get('selectedAnswers').forEach((answer) => {
         totalVotes += answer.get('votedBy.length');
