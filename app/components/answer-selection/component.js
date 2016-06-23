@@ -44,6 +44,12 @@ export default Ember.Component.extend({
         answerChoices.forEach((answer) => {
           if(answer.get('votedBy.length') >= winnerVotes) {
             if (answer.get('votedBy.length') === winnerVotes){
+              currentGame.get('winners').then((winners) => {
+                answer.get('player').then((player) => {
+                  winners.addObject(player);
+                  currentGame.save();
+                });
+              });
             } else {
               currentGame.set('winners', []);
               winnerVotes = answer.get('votedBy.length');

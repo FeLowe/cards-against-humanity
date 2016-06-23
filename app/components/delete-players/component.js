@@ -3,7 +3,7 @@ import Ember from 'ember';
 export default Ember.Component.extend({
 
   actions: {
-    deletePlayers(players, answers, questions) {
+    deletePlayers(players, answers, questions, game) {
       var answerArray = answers.toArray();
       answerArray.forEach(function(answer) {
         answer.set('drawn', "false");
@@ -18,6 +18,11 @@ export default Ember.Component.extend({
         question.set('current', "false");
         question.save();
       });
+      game.set('players', []);
+      game.set('round', 1);
+      game.set('winners', []);
+      game.save();
+
       this.sendAction('deletePlayers', players);
     },
   }

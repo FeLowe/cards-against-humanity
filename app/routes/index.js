@@ -6,12 +6,12 @@ export default Ember.Route.extend({
       questions: this.store.findAll('question'),
       answers: this.store.findAll('answer'),
       players: this.store.findAll('player'),
-      game: this.store.findAll('game')
+      game: this.store.findRecord('game', 0)
     });
   },
   actions: {
     submitPlayers(playersPlaying, answers, questions) {
-    
+
       playersPlaying.forEach(function(player) {
         var allAnswers = answers.toArray();
         var answerHand = [];
