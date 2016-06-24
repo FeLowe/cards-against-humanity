@@ -11,7 +11,7 @@ body {
   height:200px;
   padding:15px;
   margin-top:10px;
-  margin-right:10px;
+  margin-right:10px; 
   float:left;
   box-shadow:1px 1px 1px #ccc;
   border-radius:5px;
@@ -35,6 +35,10 @@ body {
 
 .questionTile > p, .answerTile > p {
   font-size: 20px;
+}
+
+.answerTile > hr {
+  border-top: 1px solid #ccc;
 }
 /*NAV BAR EVERYTHING*/
 #nav-bar-links{
