@@ -1,44 +1,51 @@
-
 {{#if allSelected}}
-  {{#if voted}}
-    {{#if roundComplete}}
-      <h2>Winner(s)</h2>
-      {{#each game.winners as |result|}}
+{{#if voted}}
+{{#if roundComplete}}
 
-        <div class="answerTile">
-          <p>{{result.cardcontent}}</p>
-          <p>{{result.player.username}}'s answer</p>
-        </div>
+<div>
+  <div class="row">
+    <h2>Winner(s)</h2>
 
-      {{/each}}
-    {{else}}
-      <h2>Waiting for all votes...</h2>
-    {{/if}}
+    {{#each game.winners as |result|}}
+      <div class="answerTile">
+        <p>{{result.cardcontent}}</p>
+        <p>{{result.player.username}}'s answer</p>
+      </div>
+    {{/each}}
 
-  {{else}}
-    <div id="voteBox">
-      <h2>{{player.username}}'S VOTE</h2>
-      {{#each game.answers as |selectedAnswer|}}
-        <div class="answerTile">
+  </div>
+  <div class="row">
+      <button class="btn change-button restart-game-button">Restart Game</button>
+  </div>
+</div>
+{{else}}
+<h2>Waiting for all votes...</h2>
+{{/if}}
 
-          <p>{{selectedAnswer.cardcontent}}</p>
-          <!-- {{selectedAnswer.id}} -->
-          <button id="voteButton" class="btn change-button position-buttons-bottom-right"{{action 'vote' selectedAnswer}}>vote</button>
-          <br>
-        </div>
-      {{/each}}
-    </div>
-  {{/if}}
+{{else}}
+<div id="voteBox">
+  <h2>{{player.username}}'S VOTE</h2>
+  {{#each game.answers as |selectedAnswer|}}
+  <div class="answerTile">
+
+    <p>{{selectedAnswer.cardcontent}}</p>
+    <!-- {{selectedAnswer.id}} -->
+    <button id="voteButton" class="btn change-button position-buttons-bottom-right"{{action 'vote' selectedAnswer}}>vote</button>
+    <br>
+  </div>
+  {{/each}}
+</div>
+{{/if}}
 {{else}}
 
-  {{#if playerSelected}}
-  <h2>Waiting for all players to select...</h2>
-  {{else}}
-    <!-- <div id="selected-card"class="row">
-      {{selectedStatus.cardcontent}}
-    </div> -->
-    <div id="cards">
-      {{answer-tile playerAnswers=playerAnswers allAnswers=allAnswers selectCard="selectCard"}}
-    </div>
-  {{/if}}
+{{#if playerSelected}}
+<h2>Waiting for all players to select...</h2>
+{{else}}
+<!-- <div id="selected-card"class="row">
+{{selectedStatus.cardcontent}}
+</div> -->
+<div id="cards">
+  {{answer-tile playerAnswers=playerAnswers allAnswers=allAnswers selectCard="selectCard"}}
+</div>
+{{/if}}
 {{/if}}

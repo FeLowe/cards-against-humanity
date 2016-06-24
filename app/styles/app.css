@@ -82,6 +82,11 @@ body {
   right: 45px;
 }
 
+.restart-game-button {
+  position: absolute;
+  margin-top: 20px;
+}
+
 /*#play-button{
   position: absolute;
   bottom: 20px;
