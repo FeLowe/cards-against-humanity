@@ -2,7 +2,8 @@
 {{#if allSelected}}
   {{#if voted}}
     {{#if roundComplete}}
-      <h2>Winner(s)</h2>
+      <h2>Winner(s)<button id="nextRoundButton" class="btn"{{action 'nextRound'}}>Continue to Next Round</button></h2>
+
       {{#each game.winners as |result|}}
         <h3>{{result.cardcontent}}</h3>
         <h3>Player: {{result.player.username}}</h3>
@@ -26,9 +27,7 @@
   {{#if playerSelected}}
   <h2>Waiting for all players to select...</h2>
   {{else}}
-    <div id="selected-card"class="row">
-      {{selectedStatus.cardcontent}}
-    </div>
+  
     <div id="cards">
       {{answer-tile playerAnswers=playerAnswers allAnswers=allAnswers selectCard="selectCard"}}
     </div>

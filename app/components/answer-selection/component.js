@@ -121,8 +121,69 @@ export default Ember.Component.extend({
             }
           });
         });
-        // this.sendAction('nextRound');
       }
-    }
+    },
+
+    nextRound() {
+      this.set('allSelected', false);
+      this.set('voted', false);
+      this.set('roundComplete', false);
+      this.set('playerSelected', false);
+      this.set('results', []);
+      this.set('selectedAnswers', []);
+      this.get('allAnswers').forEach(function(answer) {
+        answer.set('selected', 'false');
+        answer.set('votedBy', []);
+        answer.set('player', []);
+        answer.save();
+      });
+      this.set('game.round' + 1);
+      this.set('game.winners', []);
+      this.set('game.votes', 0);
+      this.set('game.selected', 0);
+      this.set('game.answers', []);
+      this.get('game').save();
+
+      var needsCard = true;
+      var cards = this.get('allAnswers').toArray();
+      var player = this.get('player');
+      while (needsCard) {
+        var rand = Math.floor(Math.random() * cards.length);
+        if (cards[rand].get('drawn') === "false") {
+          var answer = cards[rand];
+          player.get('answers').then((answers) => {
+            this.get('selectedStatus').then((played) => {
+              answers.addObject(answer);
+              answers.removeObject(played);
+            }).then(function() {
+            console.log('TWO', player.get('answers.length'));
+            player.save();
+
+            });
+          });
+
+
+          // player.get('answers').then((answers) => {
+          //   answers.removeObject(this.get('selectedStatus'));
+          //   answers.addObject(answer);
+          //
+          //   console.log('TWO', player.get('answers.length'));
+          // }).then(function() {
+          //   player.save();
+          //
+          // });
+
+          // player.get('answers').then((answers) => {
+          //   console.log('ONE', player.get('answers.length'));
+          // });
+          cards[rand].set('drawn', "true");
+          answer.set('player', this.get('player'));
+          cards[rand].save();
+          needsCard = false;
+        } else {
+          rand = Math.floor(Math.random() * cards.length);
+        }
+      };
+    },
   }
 });
