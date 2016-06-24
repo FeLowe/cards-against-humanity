@@ -1,7 +1,13 @@
-# Cards-against-humanity
+# Developers Against Humanity
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+This App is a clone of Cards Against Humanity.
+
+## Contributors
+
+John Dow: https://github.com/dowjohn
+Kevin Deganos: https://github.com/kdeganos
+LaTaevia Berry: https://github.com/LATAEVIA/
+Fernanda Lowe: https://github.com/FeLowe/
 
 ## Prerequisites
 
@@ -15,7 +21,7 @@ You will need the following things properly installed on your computer.
 
 ## Installation
 
-* `git clone <repository-url>` this repository
+* `git clone https://github.com/FeLowe/cards-against-humanity.git` this repository
 * change into the new directory
 * `npm install`
 * `bower install`
@@ -41,7 +47,11 @@ Make use of the many generators for code, try `ember help generate` for more det
 
 ### Deploying
 
-Specify what it takes to deploy your app.
+Deploy through Heroku or Firebase
+
+## Copyright
+
+Cards Against Humanity is available under a Creative Commons BY-NC-SA 2.0 license. That means you can use, remix, and share the game for free, but you can’t sell it without Cards Against Humanity's permission.
 
 ## Further Reading / Useful Links
 
@@ -50,4 +60,3 @@ Specify what it takes to deploy your app.
 * Development Browser Extensions
   * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
   * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
-
