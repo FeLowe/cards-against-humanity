@@ -7,6 +7,7 @@
 
         <div class="answerTile">
           <p>{{result.cardcontent}}</p>
+          <hr>
           <p>{{result.player.username}}'s answer</p>
         </div>
 
@@ -17,7 +18,7 @@
 
   {{else}}
     <div id="voteBox">
-      <h2>{{player.username}}'S VOTE</h2>
+      <h2>VOTE NOW</h2>
       {{#each game.answers as |selectedAnswer|}}
         <div class="answerTile">
 
